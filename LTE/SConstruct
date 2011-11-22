@@ -1,0 +1,15 @@
+
+
+DefaultEnvironment( CCFLAGS='-O3 --std=gnu++0x',
+                    CPPPATH='.',
+                    LIBPATH='lib',
+                    )
+
+SRCS=Glob('LTE/*.cc')
+for x in SRCS:
+    print x
+
+Library( 'lib/libLTE', SRCS)
+
+for test_src in Glob('test/*.cc'):
+    Program(test_src,LIBS=['LTE', 'fftw3f'])

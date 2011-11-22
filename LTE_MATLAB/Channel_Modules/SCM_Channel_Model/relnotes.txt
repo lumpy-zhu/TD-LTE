@@ -1,0 +1,43 @@
+Extended SCM MATLAB implementation
+Release notes, Aug. 30, 2006
+
+This file documents changes to compared to SCM-30-09-2004 (first SCME implementation) and the public SCM. 
+
+Changes implemented (JSa/April 18, 2005):
+*****************************************
+- TDL values (AoAs, AoDs, delays, powers) checked to comply with (Baum et al, 2005). 
+- The midpath powers and delays for the IntraClusterDsUsed option checked to comply with (Baum et al, 2005).
+- Shadow fading inter-site correlation corrected, linkpar.BsNumber renamed to linkpar.MsNumber. Implementation is now identical with the public SCM (http://www.tkk.fi/Units/Radio/scm/).
+- Power normalization with the polarization option corrected. Implementation is now identical with the public SCM with scmpar.XpdIndependentPower='no' (the 'yes' option not supported). ANSI-C file scm_mex_core.c updated. 
+
+
+Changes implemented (MMi/May 19, 2005):
+*****************************************
+- Time-variant delays and AoAs to comply with (Baum et al, 2005)
+
+
+Changes implemented (JSa/May 20, 2005):
+*****************************************
+- Time-variant shadow fading to comply with (Baum et al, 2005)
+
+
+Changes implemented (DSB/May 29, 2005):
+*****************************************
+- Fixed path-loss model to comply with (Baum et al, 2005)
+
+
+Changes implemented (MMi/May 30, 2005):
+*****************************************
+- SCMPAR has one more field: AlternativePathloss
+- Path-loss and standard deviation formulas for 'AlternativePathloss' added
+- In the case of LOS in suburban or urban macro, urban micro LOS formula is used and there is a warning saying that
+- K-factor formula for the urban macro case is now the same as for suburban macro case
+
+Changes implemented (DSB/Aug 28, 2005):
+*****************************************
+- repackaged with scmparset.m instead of scenparset.m
+
+Changes implemented (DSB/Aug 30, 2006):
+*****************************************
+- bug fix (did not affect computation, but slowed it down in certain cases) in scm_mex_core.c and scm_core.m
+- minor bug fix in ds.m and cas.m
